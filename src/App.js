@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
   }, [currentLive])
   return (
-    <div className='text-black font-bold'>
+    <div className='text-black'>
       <Header currentLive={currentLive} setCurrentLive={setCurrentLive}></Header>
       <Software></Software>
     </div>

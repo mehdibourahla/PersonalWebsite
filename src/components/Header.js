@@ -17,11 +17,11 @@ const Header = ({ currentLive, setCurrentLive }) => {
       className:'hover:bg-red hover:text-white'
     },
   ]);
-  const onClick = (text) => {
-    setCurrentLive(text)
+  const onClick = (e) => {
+    setCurrentLive(e.target.text)
     setButtonsState(
       buttonsState.map((button) => 
-        button.text === text ? 
+        button.text === e.target.text ? 
         { ...button, className:'bg-red text-white' } :
         { ...button, className:'hover:bg-red hover:text-white' }
       )
@@ -34,7 +34,8 @@ const Header = ({ currentLive, setCurrentLive }) => {
         <a href='#' className='text-3xl font-bold'>
           Mehdi <span className='text-red'>M</span> Bourahla
         </a>
-        <div className='flex justify-around w-full p-2 font-semibold xl:w-2/3 md:text-xl'>
+        <div className='flex justify-around text-center font-semibold flex-wrap text-lg w-full 
+        md:flex-nowrap md:text-xl md:w-2/3'>
           {buttonsState.map((el, index) => {
             return (
               <Button
