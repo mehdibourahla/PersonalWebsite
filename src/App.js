@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
   }, [currentLive])
   return (
-    <div className='text-black'>
+    <div className='text-black overscroll-y-none'>
       <Header currentLive={currentLive} setCurrentLive={setCurrentLive}></Header>
       <Software></Software>
     </div>

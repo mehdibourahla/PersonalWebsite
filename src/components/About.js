@@ -5,7 +5,7 @@ import aboutImg from "../assets/img/mehdi.png";
 const About = () => {
   return (
     <div className='bg-black py-16'>
-      <div className='container md:px-32 lg:flex lg:justify-around '>
+      <div className='container px-4 md:px-32 lg:flex lg:justify-around '>
         <div className='lg:w-1/2 py-5'>
             <p className='text-red'>Hi, my name is</p>
             <p className='text-white text-4xl'>Mehdi Bourahla.</p>

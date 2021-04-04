@@ -37,7 +37,7 @@ const Portfolio = () => {
   ]);
   return (
     <div className='bg-black text-white py-16'>
-      <div className='container md:px-32'>
+      <div className='container px-4 md:px-32'>
         <div className='md:flex md:items-center'>
           <div className='md:ml-1 w-1/4 h-px border border-red md:order-2'></div>
           <h1 className='text-2xl font-semibold'>Some things I've done</h1>
@@ -56,6 +56,9 @@ const Portfolio = () => {
                 <p className='bg-black-dark p-2 rounded-lg text-left '>
                   {portfolio.description}
                 </p>
+                <div className="flex">
+
+                </div>
               </div>
             </div>
           );

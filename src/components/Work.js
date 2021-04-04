@@ -56,7 +56,7 @@ const Work = () => {
   };
   return (
     <div className='bg-white py-16'>
-      <div className='container md:px-32'>
+      <div className='container px-4 md:px-32'>
         <div className='md:flex md:items-center'>
           <div className='md:ml-1 w-1/4 md:w-1/6 h-px border border-red md:order-2'></div>
           <h1 className='text-2xl font-semibold'> Where I've worked</h1>
