@@ -1,38 +1,43 @@
 import { React, useState } from "react";
 import Image from "./Image";
-import aboutImg from "../assets/img/mehdi.png";
+import SLRimg from "../assets/img/SLR.png";
+import CSCCimg from "../assets/img/cscc-challenge.png";
+import Snakeimg from "../assets/img/snake.png";
 
 const Portfolio = () => {
-  const [portfolioState,setPortfolioState] = useState([
+  const [portfolioState, setPortfolioState] = useState([
     {
-      img: aboutImg,
-      title: "CSCC Challenge",
+      img: SLRimg,
+      title: "Sign Language Recognition",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus iste quae eligendi est quos provident atque velit, asperiores aut, iure similique sunt recusandae eius nesciunt adipisci possimus magni incidunt hic.",
+        "The main goal of this project is to conceive and realize a solution based on machine learning for sign language recognition that allows the control of a smart home environment through gestures.",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github:
+          "https://github.com/mehdibourahla/Machine-Learning-for-Sign-Language-Recognition",
       },
+      tags: ["Machine Learning", "Keras", "CNN", "RNN"],
     },
     {
-      img: aboutImg,
+      img: CSCCimg,
       title: "CSCC Challenge",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus iste quae eligendi est quos provident atque velit, asperiores aut, iure similique sunt recusandae eius nesciunt adipisci possimus magni incidunt hic.",
+        "This project was made for the CSCC members. It consists of a plateform where coding challenges are posted and solved by members. Developed with NodeJS.",
       links: {
         github: "https://github.com/mehdibourahla/csccChallenge",
         production: "https://cscc-challenges.herokuapp.com/challenges",
       },
+      tags: ["NodeJS", "ExpressJS", "MongoDB", "Bootstrap"],
     },
     {
-      img: aboutImg,
-      title: "CSCC Challenge",
+      img: Snakeimg,
+      title: "SnakeJS",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus iste quae eligendi est quos provident atque velit, asperiores aut, iure similique sunt recusandae eius nesciunt adipisci possimus magni incidunt hic.",
+        "SnakeJS is the snake game we used to play in Nokia phones developed with Javascript where multiple snakes could appear on the board",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/SnakeJS",
+        production: "https://snakeman-js.netlify.app/",
       },
+      tags: ["JavaScript"],
     },
   ]);
   return (
@@ -44,20 +49,52 @@ const Portfolio = () => {
         </div>
         {portfolioState.map((portfolio, index) => {
           return (
-            <div key={index} className={"py-8 md:flex md:justify-center md:transform " + (index % 2 ? 'md:-translate-x-6' : 'md:translate-x-6')}>
-              <div className={index % 2 ? 'order-1' : ''}>
+            <div
+              key={index}
+              className={
+                "py-8 md:flex md:justify-center md:transform " +
+                (index % 2 ? "md:-translate-x-6" : "md:translate-x-6")
+              }
+            >
+              <div className={"max-w-lg " + (index % 2 ? "order-1" : "")}>
                 <Image hasBorder={true} src={portfolio.img}></Image>
               </div>
-              <div className={'md:w-1/3  md:transform '+(index % 2 ? 'md:translate-x-6 md:text-left' : 'md:-translate-x-6 md:text-right')}>
+              <div
+                className={
+                  "md:w-1/3  md:transform " +
+                  (index % 2
+                    ? "md:translate-x-6 md:text-left"
+                    : "md:-translate-x-6 md:text-right")
+                }
+              >
                 <small className='text-red font-semibold'>
                   Featured project
                 </small>
                 <h2 className='text-2xl font-semibold'>{portfolio.title}</h2>
-                <p className='bg-black-dark p-2 rounded-lg text-left '>
-                  {portfolio.description}
-                </p>
-                <div className="flex">
-
+                <div className='bg-black-dark p-2 rounded-lg text-left '>
+                  <p>{portfolio.description}</p>
+                  <div>
+                    <a href={portfolio.links.github}>
+                      <i className='fab fa-github fa-md mr-2'></i>
+                    </a>
+                    {portfolio.links.production && (
+                      <a href={portfolio.links.production}>
+                        <i class='fas fa-link fa-md'></i>
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div className='text-grey'>
+                  {portfolio.tags.map((tag, index) => {
+                    return (
+                      <span
+                        className='mr-1 bg-trueGrey-700 p-1 rounded-lg'
+                        key={index}
+                      >
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>

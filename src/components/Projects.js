@@ -3,59 +3,64 @@ import { React, useState } from "react";
 const Projects = () => {
   const [projectState, setProjectState] = useState([
     {
-      title: "CSCC Challenge",
+      title: "Reminder App",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi, asperiores reprehenderit assumenda iste nobis? Laboriosam debitis architecto, ad, tenetur nihil soluta adipisci quis inventore, ea corrupti officia mollitia rerum!",
+        "This project was thought as a social media where users posts messages called Reminders while others can follow, like, favourite these reminders. Developed with Laravel and VueJS.",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/reminder-laravel",
       },
+      tags: ["PHP", "Laravel", "VueJS"],
     },
     {
-      title: "CSCC Challenge",
+      title: "PongJS",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi, asperiores reprehenderit assumenda iste nobis? Laboriosam debitis architecto, ad, tenetur nihil soluta adipisci quis inventore, ea corrupti officia mollitia rerum!",
+        "PongJS is the well known Pong game developed with JavaScript where the user has control over a board and plays against an AI.",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/PongJS",
+        production: "pongman.netlify.app",
       },
+      tags: ["JavaScript"],
     },
     {
-      title: "CSCC Challenge",
+      title: "GoodBoy List",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi, asperiores reprehenderit assumenda iste nobis? Laboriosam debitis architecto, ad, tenetur nihil soluta adipisci quis inventore, ea corrupti officia mollitia rerum!",
+        "Goodboy List is a Todo list application where lives a cute dog, and users have to do their task to make the dog happy.",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/goodboylist",
+        production: "https://goodboylist.herokuapp.com/login",
       },
+      tags: ["NodeJS", "ExpressJS", "MongoDB", "Bootstrap"],
     },
     {
-      title: "CSCC Challenge",
+      title: "Contact Keeper",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi, asperiores reprehenderit assumenda iste nobis? Laboriosam debitis architecto, ad, tenetur nihil soluta adipisci quis inventore, ea corrupti officia mollitia rerum!",
+        "Full stack MERN contact manager with React hooks, context & JWT authentication. Developed while following a course on React done by Brad Traversy.",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/bradtraversy-react-contactKeeper",
+        production: "https://contactkeeper-brhl.herokuapp.com/login",
       },
+      tags: ["MongoDB", "ExpressJS", "ReactJS", 'NodeJS'],
     },
     {
-      title: "CSCC Challenge",
+      title: "Personal Blog",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi, asperiores reprehenderit assumenda iste nobis? Laboriosam debitis architecto, ad, tenetur nihil soluta adipisci quis inventore, ea corrupti officia mollitia rerum!",
+        "Simple Blog application developped with NodeJS, manages users, articles and comments. Set permissions to each users and configured routes with middlewares.",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/Blog",
+        production: "https://mehdibourahla.herokuapp.com/blogs",
       },
+      tags: ["NodeJS", "ExpressJS", "MongoDB", "Bootstrap"],
     },
     {
-      title: "CSCC Challenge",
+      title: "Algerian Railways",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi, asperiores reprehenderit assumenda iste nobis? Laboriosam debitis architecto, ad, tenetur nihil soluta adipisci quis inventore, ea corrupti officia mollitia rerum!",
+        "Algerian Railways is an online plateform for train reservation made for three actors that are the administrator to manage the trains, the consultant to track data and the customers to book reservations. ",
       links: {
-        github: "https://github.com/mehdibourahla/csccChallenge",
-        production: "https://cscc-challenges.herokuapp.com/challenges",
+        github: "https://github.com/mehdibourahla/Algerian-Railways",
       },
+      tags: ["PHP", "HTML/CSS", "Bootstrap"],
     },
+    
   ]);
   return (
     <div className='bg-white py-16'>
@@ -67,7 +72,7 @@ const Projects = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4'>
           {projectState.map((project, index) => {
             return (
-              <div key={index} className='bg-black p-2 text-white rounded-lg'>
+              <div key={index} className='flex flex-col justify-between bg-black p-3 text-white rounded-lg'>
                 <div className='flex items-center'>
                   <span className='material-icons-outlined text-red'>
                     folder_open
@@ -76,7 +81,29 @@ const Projects = () => {
                     {project.title}
                   </h2>
                 </div>
-                <p>{project.description}</p>
+                  <p>{project.description}</p>
+                  <div className='flex justify-between my-2'>
+                    <div className="text-grey">
+                      {project.tags.map((tag, index) => {
+                      return (
+                        <span className='mr-1 bg-trueGrey-700 p-1 rounded-lg' key={index}>
+                          {tag}
+                        </span>
+                      );
+                    })}
+                    </div>
+                    <div>
+                      <a href={project.links.github}>
+                        <i className='fab fa-github fa-md mr-2'></i>
+                      </a>
+                      {
+                      project.links.production && 
+                          <a href={project.links.production }>
+                            <i class='fas fa-link fa-md'></i>
+                          </a>
+                      }
+                    </div>
+                  </div>
               </div>
             );
           })}

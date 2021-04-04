@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
@@ -18,7 +19,8 @@ module.exports = {
       white: '#f5f5f5',
       grey:'#f1faeeb3',
       red: '#c44536',
-
+      trueGrey: colors.trueGray,
+      
     },
     container: {
       center: true,
