@@ -83,23 +83,23 @@ const Projects = () => {
                 </div>
                   <p>{project.description}</p>
                   <div className='flex justify-between my-2'>
-                    <div className="text-grey">
+                    <div className="flex flex-wrap text-grey">
                       {project.tags.map((tag, index) => {
                       return (
-                        <span className='mr-1 bg-trueGrey-700 p-1 rounded-lg' key={index}>
+                        <span className='mr-1 mt-2 bg-trueGrey-700 p-1 rounded-lg' key={index}>
                           {tag}
                         </span>
                       );
                     })}
                     </div>
-                    <div>
+                    <div className='flex'>
                       <a href={project.links.github}>
-                        <i className='fab fa-github fa-md mr-2'></i>
+                        <i className='fab fa-github fa-md'></i>
                       </a>
                       {
                       project.links.production && 
                           <a href={project.links.production }>
-                            <i class='fas fa-link fa-md'></i>
+                            <i className='fas fa-link fa-md ml-2'></i>
                           </a>
                       }
                     </div>

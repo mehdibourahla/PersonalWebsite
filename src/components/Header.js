@@ -34,7 +34,7 @@ const Header = ({ currentLive, setCurrentLive }) => {
         <a href='#' className='text-3xl font-bold'>
           Mehdi <span className='text-red'>M</span> Bourahla
         </a>
-        <div className='flex justify-around text-center font-semibold flex-wrap text-lg w-full 
+        <div className='flex flex-wrap justify-around text-center font-semibold text-sm w-full 
         md:flex-nowrap md:text-xl md:w-2/3'>
           {buttonsState.map((el, index) => {
             return (

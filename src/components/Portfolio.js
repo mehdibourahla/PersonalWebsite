@@ -42,9 +42,9 @@ const Portfolio = () => {
   ]);
   return (
     <div className='bg-black text-white py-16'>
-      <div className='container px-4 md:px-32'>
-        <div className='md:flex md:items-center'>
-          <div className='md:ml-1 w-1/4 h-px border border-red md:order-2'></div>
+      <div className='container px-4 lg:px-32'>
+        <div className='lg:flex lg:items-center'>
+          <div className='lg:ml-1 w-1/4 h-px border border-red lg:order-2'></div>
           <h1 className='text-2xl font-semibold'>Some things I've done</h1>
         </div>
         {portfolioState.map((portfolio, index) => {
@@ -52,8 +52,8 @@ const Portfolio = () => {
             <div
               key={index}
               className={
-                "py-8 md:flex md:justify-center md:transform " +
-                (index % 2 ? "md:-translate-x-6" : "md:translate-x-6")
+                "py-8 lg:flex lg:justify-center lg:transform " +
+                (index % 2 ? "lg:-translate-x-6" : "lg:translate-x-6")
               }
             >
               <div className={"max-w-lg " + (index % 2 ? "order-1" : "")}>
@@ -61,10 +61,10 @@ const Portfolio = () => {
               </div>
               <div
                 className={
-                  "md:w-1/3  md:transform " +
+                  "lg:w-1/3  lg:transform " +
                   (index % 2
-                    ? "md:translate-x-6 md:text-left"
-                    : "md:-translate-x-6 md:text-right")
+                    ? "lg:translate-x-6 lg:text-left"
+                    : "lg:-translate-x-6 lg:text-right")
                 }
               >
                 <small className='text-red font-semibold'>
@@ -79,16 +79,16 @@ const Portfolio = () => {
                     </a>
                     {portfolio.links.production && (
                       <a href={portfolio.links.production}>
-                        <i class='fas fa-link fa-md'></i>
+                        <i className='fas fa-link fa-md'></i>
                       </a>
                     )}
                   </div>
                 </div>
-                <div className='text-grey'>
+                <div className='flex flex-wrap text-grey'>
                   {portfolio.tags.map((tag, index) => {
                     return (
                       <span
-                        className='mr-1 bg-trueGrey-700 p-1 rounded-lg'
+                        className='mr-1 mt-2 bg-trueGrey-700 p-1 rounded-lg'
                         key={index}
                       >
                         {tag}
