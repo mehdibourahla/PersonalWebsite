@@ -19,6 +19,7 @@ module.exports = {
       white: '#f5f5f5',
       grey:'#f1faeeb3',
       red: '#c44536',
+      blue: colors.blue,
       trueGrey: colors.trueGray,
       
     },
@@ -35,6 +36,7 @@ module.exports = {
     extend: {
       fontWeight: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
       backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      fontSize: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     },
   },
   plugins: [],
