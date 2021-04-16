@@ -1,8 +1,8 @@
 import { React, useState } from "react";
-import Image from "./Image";
-import SLRimg from "../assets/img/SLR.png";
-import CSCCimg from "../assets/img/cscc-challenge.png";
-import Snakeimg from "../assets/img/snake.png";
+import Image from "../Image";
+import SLRimg from "../../assets/img/SLR.png";
+import CSCCimg from "../../assets/img/cscc-challenge.png";
+import Snakeimg from "../../assets/img/snake.png";
 
 const Portfolio = () => {
   const [portfolioState, setPortfolioState] = useState([
@@ -84,7 +84,12 @@ const Portfolio = () => {
                     )}
                   </div>
                 </div>
-                <div className='flex flex-wrap text-grey'>
+                <div
+                  className={
+                    "flex flex-wrap text-grey " +
+                    (index % 2 ? "" : "justify-end")
+                  }
+                >
                   {portfolio.tags.map((tag, index) => {
                     return (
                       <span
